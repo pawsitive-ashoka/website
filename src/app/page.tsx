@@ -1,13 +1,6 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50">
-      {/* Header */}
-      <header className="border-b border-amber-200/50 bg-white/80 backdrop-blur-sm">
-        <div className="mx-auto max-w-4xl px-6 py-6">
-          <h1 className="text-2xl font-bold text-amber-900">🐾 Pawsitive</h1>
-        </div>
-      </header>
-
+    <>
       {/* Main Content */}
       <main className="mx-auto max-w-4xl px-6 py-16">
         {/* Hero Section */}
@@ -111,6 +104,6 @@ export default function Home() {
           <p className="mt-2">Making the world a better place for all creatures 🐾</p>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
