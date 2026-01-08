@@ -7,15 +7,10 @@ export default function AboutPage() {
         <div className="rounded-2xl bg-white/60 p-8 shadow-sm backdrop-blur-sm">
           <h2 className="mb-4 text-2xl font-semibold text-amber-900">Our Mission</h2>
           <p className="mb-4 text-amber-800/90">
-            Pawsitive is dedicated to promoting animal welfare and fostering a deeper 
-            appreciation for all living beings on campus and beyond. We believe in 
-            creating a safe, compassionate community where both humans and animals can 
-            thrive together.
+            Pawsitive is Ashoka University’s student-led animal welfare club, established in 2018, and dedicated to the care and well-being of the street dogs and cats within and around the campus. Driven by a community of animal welfare advocates, we work to alleviate suffering through veterinary care, sterilization, vaccination, and tick removal drives, while also fostering awareness about animal health and responsible pet ownership.
           </p>
           <p className="text-amber-800/90">
-            Through our initiatives, we aim to raise awareness about animal rights, 
-            provide care for campus animals, and build a strong community of animal 
-            lovers at Ashoka University.
+            Through collaboration, education, and hands-on action, Pawsitive strives to build a culture of compassion, empathy, and coexistence between animals and the university community.
           </p>
         </div>
 

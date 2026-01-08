@@ -36,35 +36,59 @@ export default function Home() {
           <h3 className="mb-8 text-center text-2xl font-semibold text-amber-900">
             What We Do
           </h3>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-xl bg-white/60 p-6 shadow-sm backdrop-blur-sm">
-              <div className="mb-3 text-3xl">🐕</div>
+              <div className="mb-3 text-3xl">🍖</div>
               <h4 className="mb-2 text-lg font-semibold text-amber-900">
-                Animal Care
+                Daily Care & Monitoring
               </h4>
               <p className="text-sm text-amber-800/80">
-                Support and care for campus animals through feeding programs and
-                medical assistance.
+                We regularly feed and monitor the health of street dogs and cats on and around campus, ensuring their basic needs are met with consistency and care.
+              </p>
+            </div>
+            <div className="rounded-xl bg-white/60 p-6 shadow-sm backdrop-blur-sm">
+              <div className="mb-3 text-3xl">🏥</div>
+              <h4 className="mb-2 text-lg font-semibold text-amber-900">
+                Veterinary Support
+              </h4>
+              <p className="text-sm text-amber-800/80">
+                We facilitate timely medical treatment by coordinating vet visits, hospitalisation, and post-treatment care for injured or unwell animals.
+              </p>
+            </div>
+            <div className="rounded-xl bg-white/60 p-6 shadow-sm backdrop-blur-sm">
+              <div className="mb-3 text-3xl">💉</div>
+              <h4 className="mb-2 text-lg font-semibold text-amber-900">
+                Sterilisation & Vaccination Drives
+              </h4>
+              <p className="text-sm text-amber-800/80">
+                We organise sterilisation, vaccination, and tick-removal drives to control population growth, prevent disease, and promote the safety of both animals and the campus community.
+              </p>
+            </div>
+            <div className="rounded-xl bg-white/60 p-6 shadow-sm backdrop-blur-sm">
+              <div className="mb-3 text-3xl">🏠</div>
+              <h4 className="mb-2 text-lg font-semibold text-amber-900">
+                Adoption & Rehabilitation
+              </h4>
+              <p className="text-sm text-amber-800/80">
+                We support the rehabilitation and adoption of animals by connecting them with loving homes and encouraging responsible pet ownership.
               </p>
             </div>
             <div className="rounded-xl bg-white/60 p-6 shadow-sm backdrop-blur-sm">
               <div className="mb-3 text-3xl">📚</div>
               <h4 className="mb-2 text-lg font-semibold text-amber-900">
-                Awareness
+                Education & Awareness
               </h4>
               <p className="text-sm text-amber-800/80">
-                Organize workshops and events to educate about animal welfare and
-                responsible pet ownership.
+                We collaborate with veterinary professionals to educate students and the wider community about animal health, behaviour, welfare, and humane coexistence.
               </p>
             </div>
             <div className="rounded-xl bg-white/60 p-6 shadow-sm backdrop-blur-sm">
               <div className="mb-3 text-3xl">🤝</div>
               <h4 className="mb-2 text-lg font-semibold text-amber-900">
-                Community
+                Student Engagement
               </h4>
               <p className="text-sm text-amber-800/80">
-                Build a community of animal lovers through meetups, volunteer
-                opportunities, and adoption drives.
+                We provide students with opportunities to actively participate in animal welfare efforts, fostering empathy, responsibility, and long-term commitment to animal rights.
               </p>
             </div>
           </div>
