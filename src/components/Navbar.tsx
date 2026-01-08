@@ -10,6 +10,7 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/dogs", label: "Our Dogs" },
+    { href: "/departments", label: "Departments" },
     { href: "/team", label: "Meet the Team" },
     { href: "/gallery", label: "Gallery" },
   ];
