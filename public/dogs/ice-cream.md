@@ -4,6 +4,7 @@ gender: Male
 breed: Indie
 age: ~7 years
 appearance: White and Black
+location: Gate 1
 image: /dogs/ice-cream.jpg
 order: 4
 ---
