@@ -1,3 +1,15 @@
+'use client';
+
+import { useState } from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+
 export default function DogsPage() {
   const dogs = [
     {
@@ -90,28 +102,63 @@ export default function DogsPage() {
             <div className="p-4">
               <h2 className="mb-3 text-xl font-bold text-amber-900">{dog.name}</h2>
               
-              <div className="space-y-1.5 text-xs">
-                <div className="flex items-start">
-                  <span className="font-semibold text-amber-900 w-20 flex-shrink-0">Gender:</span>
-                  <span className="text-amber-800">{dog.gender}</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="font-semibold text-amber-900 w-20 flex-shrink-0">Breed:</span>
-                  <span className="text-amber-800">{dog.breed}</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="font-semibold text-amber-900 w-20 flex-shrink-0">Age:</span>
-                  <span className="text-amber-800">{dog.age}</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="font-semibold text-amber-900 w-20 flex-shrink-0">Appearance:</span>
-                  <span className="text-amber-800 break-words">{dog.appearance}</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="font-semibold text-amber-900 w-20 flex-shrink-0">Personality:</span>
-                  <span className="text-amber-800 break-words">{dog.personality}</span>
-                </div>
-              </div>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="mb-3 w-full rounded-lg bg-amber-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-amber-800">
+                    Learn More
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold text-amber-900">{dog.name}</DialogTitle>
+                    <DialogDescription className="text-amber-800">
+                      Learn more about {dog.name}
+                    </DialogDescription>
+                  </DialogHeader>
+                  
+                  {/* Detailed Information */}
+                  <div className="space-y-4 pt-4">
+                    {/* Image Placeholder */}
+                    <div className="relative h-64 w-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center rounded-lg">
+                      <span className="text-8xl">{dog.isCat ? '🐱' : '🐕'}</span>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <div>
+                        <h3 className="font-semibold text-amber-900">Gender</h3>
+                        <p className="text-amber-800">{dog.gender}</p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-amber-900">Breed</h3>
+                        <p className="text-amber-800">{dog.breed}</p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-amber-900">Age</h3>
+                        <p className="text-amber-800">{dog.age}</p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-amber-900">Appearance</h3>
+                        <p className="text-amber-800">{dog.appearance}</p>
+                      </div>
+                      
+                      {dog.location && (
+                        <div>
+                          <h3 className="font-semibold text-amber-900">Location</h3>
+                          <p className="text-amber-800">{dog.location}</p>
+                        </div>
+                      )}
+                      
+                      <div>
+                        <h3 className="font-semibold text-amber-900">Personality & Story</h3>
+                        <p className="text-amber-800 leading-relaxed">{dog.personality}</p>
+                      </div>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         ))}
