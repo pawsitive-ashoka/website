@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   Dialog,
   DialogContent,
@@ -74,21 +74,60 @@ export default function DogsPage() {
 
   return (
     <main className="mx-auto max-w-7xl px-6 py-16">
-      <h1 className="mb-4 text-4xl font-bold text-amber-900">Our Dogs & Cats</h1>
-      <p className="mb-12 text-lg text-amber-800">
-        Meet the wonderful dogs and cats that call Ashoka University home. These furry friends 
-        are an important part of our campus community.
-      </p>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="mb-4 text-4xl font-bold text-amber-900">Our Dogs & Cats</h1>
+        <p className="mb-12 text-lg text-amber-800">
+          Meet the wonderful dogs and cats that call Ashoka University home. These furry friends 
+          are an important part of our campus community.
+        </p>
+      </motion.div>
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <motion.div 
+        className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.05
+            }
+          }
+        }}
+      >
         {dogs.map((dog, index) => (
-          <div
+          <motion.div
             key={index}
-            className="rounded-xl bg-white/60 shadow-sm backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-lg overflow-hidden"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            whileHover={{ scale: 1.03, y: -5 }}
+            transition={{ duration: 0.3 }}
+            className="rounded-xl bg-white/60 shadow-sm backdrop-blur-sm overflow-hidden group"
           >
             {/* Animal Image Placeholder */}
-            <div className="relative h-40 w-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center">
-              <span className="text-6xl">{dog.isCat ? '🐱' : '🐕'}</span>
+            <motion.div 
+              className="relative h-40 w-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.span 
+                className="text-6xl"
+                animate={{ 
+                  rotate: [0, 5, -5, 0],
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 1
+                }}
+              >
+                {dog.isCat ? '🐱' : '🐕'}
+              </motion.span>
               {/* Replace with actual image when available:
               <Image 
                 src={dog.image} 
@@ -96,17 +135,29 @@ export default function DogsPage() {
                 fill
                 className="object-cover"
               /> */}
-            </div>
+            </motion.div>
             
             {/* Animal Information */}
             <div className="p-4">
-              <h2 className="mb-3 text-xl font-bold text-amber-900">{dog.name}</h2>
+              <motion.h2 
+                className="mb-3 text-xl font-bold text-amber-900"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                {dog.name}
+              </motion.h2>
               
               <Dialog>
                 <DialogTrigger asChild>
-                  <button className="mb-3 w-full rounded-lg bg-amber-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-amber-800">
+                  <motion.button 
+                    className="mb-3 w-full rounded-lg bg-amber-900 px-4 py-2 text-sm font-medium text-white"
+                    whileHover={{ scale: 1.05, backgroundColor: '#78350f' }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     Learn More
-                  </button>
+                  </motion.button>
                 </DialogTrigger>
                 <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
                   <DialogHeader>
@@ -117,54 +168,111 @@ export default function DogsPage() {
                   </DialogHeader>
                   
                   {/* Detailed Information */}
-                  <div className="space-y-4 pt-4">
+                  <motion.div 
+                    className="space-y-4 pt-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
                     {/* Image Placeholder */}
-                    <div className="relative h-64 w-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center rounded-lg">
+                    <motion.div 
+                      className="relative h-64 w-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center rounded-lg"
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.4 }}
+                    >
                       <span className="text-8xl">{dog.isCat ? '🐱' : '🐕'}</span>
-                    </div>
+                    </motion.div>
                     
-                    <div className="space-y-3">
-                      <div>
+                    <motion.div 
+                      className="space-y-3"
+                      initial="hidden"
+                      animate="visible"
+                      variants={{
+                        visible: {
+                          transition: {
+                            staggerChildren: 0.1
+                          }
+                        }
+                      }}
+                    >
+                      <motion.div
+                        variants={{
+                          hidden: { opacity: 0, x: -20 },
+                          visible: { opacity: 1, x: 0 }
+                        }}
+                      >
                         <h3 className="font-semibold text-amber-900">Gender</h3>
                         <p className="text-amber-800">{dog.gender}</p>
-                      </div>
+                      </motion.div>
                       
-                      <div>
+                      <motion.div
+                        variants={{
+                          hidden: { opacity: 0, x: -20 },
+                          visible: { opacity: 1, x: 0 }
+                        }}
+                      >
                         <h3 className="font-semibold text-amber-900">Breed</h3>
                         <p className="text-amber-800">{dog.breed}</p>
-                      </div>
+                      </motion.div>
                       
-                      <div>
+                      <motion.div
+                        variants={{
+                          hidden: { opacity: 0, x: -20 },
+                          visible: { opacity: 1, x: 0 }
+                        }}
+                      >
                         <h3 className="font-semibold text-amber-900">Age</h3>
                         <p className="text-amber-800">{dog.age}</p>
-                      </div>
+                      </motion.div>
                       
-                      <div>
+                      <motion.div
+                        variants={{
+                          hidden: { opacity: 0, x: -20 },
+                          visible: { opacity: 1, x: 0 }
+                        }}
+                      >
                         <h3 className="font-semibold text-amber-900">Appearance</h3>
                         <p className="text-amber-800">{dog.appearance}</p>
-                      </div>
+                      </motion.div>
                       
                       {dog.location && (
-                        <div>
+                        <motion.div
+                          variants={{
+                            hidden: { opacity: 0, x: -20 },
+                            visible: { opacity: 1, x: 0 }
+                          }}
+                        >
                           <h3 className="font-semibold text-amber-900">Location</h3>
                           <p className="text-amber-800">{dog.location}</p>
-                        </div>
+                        </motion.div>
                       )}
                       
-                      <div>
+                      <motion.div
+                        variants={{
+                          hidden: { opacity: 0, x: -20 },
+                          visible: { opacity: 1, x: 0 }
+                        }}
+                      >
                         <h3 className="font-semibold text-amber-900">Personality & Story</h3>
                         <p className="text-amber-800 leading-relaxed">{dog.personality}</p>
-                      </div>
-                    </div>
-                  </div>
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
                 </DialogContent>
               </Dialog>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="mt-12 rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 p-8 text-center shadow-sm">
+      <motion.div 
+        className="mt-12 rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 p-8 text-center shadow-sm"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <h3 className="mb-3 text-xl font-semibold text-amber-900">
           Want to Help?
         </h3>
@@ -172,13 +280,16 @@ export default function DogsPage() {
           You can support our campus dogs by volunteering for feeding schedules, 
           donating supplies, or sponsoring their medical care.
         </p>
-        <a
+        <motion.a
           href="mailto:pawsitive@ashoka.edu.in"
-          className="inline-block rounded-full bg-amber-900 px-8 py-3 font-medium text-white transition-colors hover:bg-amber-800"
+          className="inline-block rounded-full bg-amber-900 px-8 py-3 font-medium text-white"
+          whileHover={{ scale: 1.05, backgroundColor: '#78350f' }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ duration: 0.2 }}
         >
           Contact Us to Help
-        </a>
-      </div>
+        </motion.a>
+      </motion.div>
     </main>
   );
 }
