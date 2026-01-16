@@ -1,23 +1,24 @@
 export default function DogsPage() {
   const dogs = [
     {
-      name: "Toofan",
+      name: "Bunty",
       gender: "Male",
       breed: "Indie",
-      age: "TBD",
-      appearance: "TBD",
-      personality: "TBD",
-      image: "/dogs/toofan.jpg", // Placeholder - add actual image path
-      isCat: true,
+      age: "6 years",
+      appearance: "White",
+      location: "Gate 1",
+      personality: "Bunty is a quiet, timid dog from the same litter as Popcorn. He lives at Gate 1 with Boop and Stockings, though he hasn’t fully found his place within the pack yet. His shy nature often makes him vulnerable to bullying, especially from Boop. Bunty takes time to warm up to people, but once he trusts you, he becomes a loyal little shadow, following you around and offering affection in his own soft, sincere way.",
+      image: "/dogs/bunty.jpg", // Placeholder - add actual image path
     },
     {
-      name: "Max",
-      gender: "Male",
+      name: "Stockings",
+      gender: "Female",
       breed: "Indie",
-      age: "TBD",
-      appearance: "TBD",
-      personality: "Friendly and loves belly rubs and treats",
-      image: "/dogs/max.jpg", // Placeholder - add actual image path
+      age: "9 years",
+      appearance: "Black with white patches",
+      location: "Gate 1",
+      personality: "Stockings is the South Bombay puppy princess of Gate 1. A professional nap enthusiast, she loves digging little holes in the ground and curling up in them for long, uninterrupted sleeps. In fact, she takes her rest so seriously that even food placed right in front of her often isn’t enough to convince her to get up.  Stockings has a habit of dozing off in the middle of the road, an unfortunate talent that has led to multiple vehicular accidents. Yet, time and again, she has proven just how resilient she is, bouncing back every single time with the same sleepy charm intact.",
+      image: "/dogs/stockings.jpg", // Placeholder - add actual image path
     },
     {
       name: "Bella",
@@ -45,6 +46,7 @@ export default function DogsPage() {
       appearance: "TBD",
       personality: "Sweet and shy, loves gentle pets and quiet company",
       image: "/dogs/luna.jpg", // Placeholder - add actual image path
+      isCat: true,
     },
     // Placeholder entries for remaining 35 dogs - update with actual information
     ...Array.from({ length: 35 }, (_, i) => ({
