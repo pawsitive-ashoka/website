@@ -108,6 +108,17 @@ export default function DogsPage() {
                 {dog.name}
               </motion.h2>
               
+              {dog.location && (
+                <motion.p
+                  className="mb-3 text-sm text-amber-700 flex items-center gap-1"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <span>📍</span> {dog.location}
+                </motion.p>
+              )}
+              
               <Dialog>
                 <DialogTrigger asChild>
                   <motion.button 

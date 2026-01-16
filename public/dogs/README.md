@@ -17,7 +17,7 @@ gender: Male/Female
 breed: Indie/Mixed/Specific Breed
 age: X years/months
 appearance: Brief physical description
-location: Where they are usually found (optional)
+location: Where they are usually found
 image: /dogs/dogname.jpg
 isCat: false (set to true if it's a cat)
 order: 1 (for display ordering, lower numbers appear first)
@@ -34,11 +34,11 @@ Include details about their behavior, quirks, favorite spots, and how they inter
 - `breed`: Usually "Indie" for Indian street dogs
 - `age`: Current age
 - `appearance`: Physical description
+- `location`: Location of the dog
 - `image`: Path to image file (must start with `/dogs/`)
 - `order`: Number for display order
 
 ## Optional Fields
-- `location`: Where they can be found on campus
 - `isCat`: Set to `true` if it's a cat (default is `false`)
 
 ## Content
