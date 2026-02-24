@@ -5,7 +5,7 @@ breed: Indie
 age: TBD
 appearance: TBD
 location: Gate 1
-image: /dogs/luna.jpg
+image: /dogs/toofan.jpg
 isCat: true
 order: 25
 ---
